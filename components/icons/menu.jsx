@@ -1,0 +1,18 @@
+import React from 'react'
+import IconSvg from './svg-icon'
+
+const Menu = (props) => {
+  return (
+    <IconSvg
+      className='icon icon-tabler icon-tabler-menu-2'
+      {...props}
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <path d="M4 6l16 0" />
+      <path d="M4 12l16 0" />
+      <path d="M4 18l16 0" />
+    </IconSvg>
+  )
+}
+
+export default Menu

@@ -1,0 +1,16 @@
+.sidebar__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px;
+  width: 20%;
+
+  -webkit-box-shadow: -2px -1px 10px -3px rgba(0,0,0,0.45);
+  -moz-box-shadow: -2px -1px 10px -3px rgba(0,0,0,0.45);
+  box-shadow: -2px -1px 10px -3px rgba(0,0,0,0.45);
+
+  -webkit-animation: scale-up-hor-right 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  animation: scale-up-hor-right 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@keyframes scale-up-hor-right{0%{transform:scaleX(.4);transform-origin:100% 100%}100%{transform:scaleX(1);transform-origin:100% 100%}}
