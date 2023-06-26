@@ -8,8 +8,8 @@ const IconSvg = (props) => {
     return (
       <svg
           xmlns='http://www.w3.org/2000/svg'
-          width={height}
-          height={width}
+          width={width}
+          height={height}
           stroke={colorIcon}
           viewBox={viewBox}
           strokeWidth={strokeWidth}

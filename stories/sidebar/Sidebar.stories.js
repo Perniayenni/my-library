@@ -19,16 +19,20 @@ export default {
       backgroundColor: {
         description: 'The background color of the Sidebar component'
       },
+      buttonClose: { description: 'If is true show button close'},
+      colorButton: { control: 'color', description: 'The color of close button' },
     },
 }
   
-export const sidebar = ({ children, footer, backgroundColor }) => {
+export const sidebar = ({ children, footer, backgroundColor, buttonClose, colorButton }) => {
   const [open, setOpen] = useState(false);
 
     return (
       <>
         <button onClick={()=> setOpen(!open)}>clickMe</button>
         {open && <Sidebar
+          colorButton={colorButton}
+          buttonClose={buttonClose}
           backgroundColor={backgroundColor}
           footer={footer}
           onClose={()=> setOpen(!open)}
@@ -50,4 +54,6 @@ sidebar.args = {
     </div>
   ),
   backgroundColor: 'white',
+  buttonClose: true,
+  colorButton: 'black'
 };

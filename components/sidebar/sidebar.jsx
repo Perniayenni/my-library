@@ -1,10 +1,15 @@
 import React, { useRef, useEffect } from 'react'
-import { getBEMClasses } from '../shared/utils'
 import PropTypes from 'prop-types'
 import ReactDOM from 'react-dom'
+import { getBEMClasses } from '../shared/utils'
+import { Close } from '../icons'
 
 const SideBar = (props) => {
-  const { additionalClassName, onClose, footer, children, onClickOutside, backgroundColor } = props
+  const { additionalClassName, 
+    onClose, footer, children, 
+    onClickOutside, backgroundColor, 
+    buttonClose, colorButton } = props
+
   const refBox = useRef(null);
   const content = useRef(null)
   const documentRoot = document.body
@@ -24,7 +29,11 @@ const SideBar = (props) => {
   return ReactDOM.createPortal(
     <div className={getBEMClasses('sidebar', {}, additionalClassName)} ref={content}>
       <div ref={refBox} className='sidebar__content' style={{backgroundColor: backgroundColor}} >
-        <div className='sidebar__close' onClick={onClose} >X</div>
+        { buttonClose &&
+        <div className='sidebar__close' > 
+          <Close color={colorButton} width={25} height={25} onClick={onClose}/> 
+        </div>
+        }
         <div className='sidebar__children'>{children}</div>
         <div className='sidebar__footer'>{footer}</div>
       </div>
@@ -36,7 +45,8 @@ const SideBar = (props) => {
 SideBar.defaultProps = {
   onClose : () => {},
   onClickOutside: () => {},
-  backgroundColor: 'white'
+  backgroundColor: 'white',
+  buttonClose: false
 }
 
 SideBar.propTypes = {
@@ -44,7 +54,9 @@ SideBar.propTypes = {
   onClose: PropTypes.func,
   onClickOutside: PropTypes.func,
   footer: PropTypes.node,
-  backgroundColor: PropTypes.string
+  backgroundColor: PropTypes.string,
+  buttonClose: PropTypes.bool,
+  colorButton: PropTypes.string
 }
 
 export default SideBar
