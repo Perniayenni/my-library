@@ -1,0 +1,12 @@
+.component {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.component img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin: 5px;
+  cursor: pointer;
+}
