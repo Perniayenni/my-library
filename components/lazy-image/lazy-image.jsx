@@ -6,6 +6,7 @@ const LazyImage = (props) => {
   const { url, alt, width, loader, additionalClassName, loaderDuration } = props
   const [imageSrc, setImageSrc] = useState(null);
   const [showLoader, setShowLoader] = useState(true);
+  const [haveError, setHaveError] = useState(false);
 
   useEffect(() => {
     const image = new Image();
@@ -20,14 +21,21 @@ const LazyImage = (props) => {
         setShowLoader(false);
       }
     };
+
+    image.onerror = () => setHaveError(true)
+    
   }, [url, loaderDuration]);
   
 
   if (!imageSrc || showLoader) {
     return (
-      <div className={getBEMClasses('lazy-image', {}, additionalClassName)}>
-       {loader}
-      </div>
+      <>
+       { haveError ? (<img className={getBEMClasses('', {}, additionalClassName)} src={notFound} />) : (
+        <div className={getBEMClasses('lazy-image', {}, additionalClassName)}>
+          {loader}
+       </div>
+      ) }
+      </>
     )
   }else {
     return <img className={getBEMClasses('', {}, additionalClassName)} alt={alt} src={url} width={width} />
