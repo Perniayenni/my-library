@@ -1,5 +1,5 @@
 import './styles.scss'
-import LazyImage from '../../components/lazy-image/lazy-image'
+import LazyImage from '../../components/lazy-image/src/lazy-image'
 
 export default {
   title: 'Components/LazyImage',

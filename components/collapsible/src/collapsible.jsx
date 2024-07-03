@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import { Minus, Plus } from '../icons'
-import { getBEMClasses } from '../shared/utils'
+import { Minus, Plus } from '../../icons'
+import { getBEMClasses } from '../../shared/utils'
 
 const Collapsible = (props) => {
   const { collapsibleTitle, children, collapsible, additionalClassName, id } = props

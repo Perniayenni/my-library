@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
-import { getBEMClasses } from '../shared/utils';
+import { getBEMClasses } from '../../shared/utils';
 
 const LazyImage = (props) => {
   const { url, alt, width, loader, additionalClassName, loaderDuration } = props

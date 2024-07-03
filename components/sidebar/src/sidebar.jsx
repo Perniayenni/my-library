@@ -1,8 +1,8 @@
 import React, { useRef, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import ReactDOM from 'react-dom'
-import { getBEMClasses } from '../shared/utils'
-import { Close } from '../icons'
+import { getBEMClasses } from '../../shared/utils'
+import { Close } from '../../icons'
 
 const SideBar = (props) => {
   const { additionalClassName, 
